@@ -1,94 +1,60 @@
-# React SaaS Template
-Remains of a SaaS business I once tried to build. Now transformed into a template for building an SaaS/admin application using React + Material-UI.
+# scout.
+scout. is a platform designed to help promoter reps and tour managers alike, in smoothing out pain points in the advancement process for Concerts, Festivals, and Live Entertainment productions.
 
-[**Check out the demo**](https://reactsaastemplate.com)
+# inspiration.
+spanning across five years spent in Event Production for Touring / Concerts, Festivals, and major Sporting Events — working on and with a number of high-visibility events and groups including the Kansas City Chiefs, the NFL, Superbowl LIV, the PGA, AEG Live, Lollapalooza, South by Southwest, and others — it became clear to me that there was a problem with the advancement process for live performances and events. it is often overlooked by outsiders just how much attention to detail and coordination goes on in these instances.
 
-![Node.js CI](https://github.com/dunky11/react-saas-template/workflows/Node.js%20CI/badge.svg)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=dunky11/react-saas-template)](https://dependabot.com)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+# use case.
 
-[<img src="/.github/gifs/showcase.gif">](https://reactsaastemplate.com "Go to demo website")
+let's look at a major arena-tour build for *Muse* from their 2012, 2nd Law Arena Tour.
+
+![Muse 2012 2nd Law Stage](https://i.pinimg.com/originals/0f/5a/99/0f5a9999aae924de4a3a0d997879a82e.jpg)
+
+pretty sweet, right? Now look at this time-lapse of the crew building it over the entire course of a day.
+https://www.youtube.com/watch?v=nX7xNCwrRZM
+
+it becomes very clear, very quickly, that it quite literally takes an army of crew to make this sort of thing happen. making sure things go off without a hitch for this sort of behemoth undertaking (*mind you, across dozens of cities a tour*) usually falls upon the shoulders of just a few key players (*with the obvious exception that each team is structured differently*):
+
+* **Venue**
+  * Promoter Rep - Coordinating with the tour to connect the technical staff (production manger, etc.) of the venue, as well as take care of accessory concerns   like marketing the show, arranging guest lists, organizing the 'front of house' (fan concourses), and in some cases hospitality, travel, catering and lodging for the tour.
+
+  * Production Manager - advancing all technical details with tour management for the incoming show. this extends into setting up and coordinating local equipment rentals and staff (stagehands, riggers, accessory techs, etc.) as needed by the tour.
+
+* **Tour**
+  * Tour Manager — in some senses, the counter to the promoter rep. for the tour itself. responsible for making sure logistics don't get lost in the weeds, and that ultimately, the 'trains run on time' so to speak. also is typically the conduit for connecting production staff from the tour to the   venue / local team and facilitating that conversation. this is the party that usually accounts for all travel movements and lodging arrangements for a massive team.
+
+  * Production Manager - oversee the actual core *technical* crew that is traveling with the production. this crew is who makes sure the stage is safe, the band sounds nice and crispy, and the visual / audio / lighting aspects of the show are all consistent from show to show.
+
+**PHEW**
+there are a ton of other key players on tours and at venues, but these represent the general *leaders* in making sure 
+**shit.
+gets.
+done.**
+
+the exchanges between these parties can cover everything from getting the bassist's sister's old roomate's niece on the guest list, to highly technical and sensative rigging and audio requirements, to legal parking permits from the city, back to the sort of infamous 'please pick out all of the *[insert color here]* M&Ms for our lead singer and leave them in the dressing room' rider requests you've probably heard tale of. 
+
+now consider that some venues can easily reach 100+ show dates in under a year, and some tour managers can be on the road 10-11 months of the year with a rotating cast of artists.
+
+basically — this is all to say that there are a lot plates being kept spinning all at once by these folks. the aim of **scout.** would be to automate and remove uncertainty from topics including:
+ * correct rider (hospitality and tech) documentation for the most *current* tour. you would probably be sickened how often the wrong stuff is passed along in the booking process with agencies.
+ * contact information and role for all respective parties on the tour and at the venue, so there is no confusion who is who, and additional parties can be included as requested on an artist's profile
+ * tax documentation to ensure there is no stall in the settlement of shows
+ * settlement receipt documentation
+ * an easy scheduling and reminder interface for making sure advance calls don't fall through the cracks
+ * other vital tour information such as lodging, catering status / menus, set-lists, prior and future tour dates etc. — in an ideal future there would be an intercactivity with programs such as MasterTour to enable a more consistent starting point and interface.
 
 
-## Getting Started
+# future.
+expand this platform to be more readily adaptable to events outside of music. 
 
-### Prerequisites
+take a typical game-day with the Chiefs, or most other professional sports franchises. depending on the scope of the game and themeatics, you can easily find yourself with a 50+ page game log and PA script made up of hundreds of calls to action ranging from pre-game to half-time to post-game. typically, every single one of these calls to action, or pieces of on-field production has: 
 
-#### Node.js 12+ (versions below could work, but are not tested)
+**1)** a staff touchpoint that is responsible for both its advance coordination
+**2)** a production team member (or members) assigned to its execution
+**3)** an individual or group of performers or honorees — often referred to at *'the talent'*
+**4)** and an accompanying call for the announcer to make over the PA system
 
-* Linux:
+times that a few dozen, up to a hundred+ times, per game — for 10 home games a year.
 
-   ```
-   sudo apt install nodejs npm
-   ```
+adds up pretty quick right? and this isn't even getting into the operations of the stadium off the field (*think concessions, parking, ticketing, and a host of other focus areas*). a centralized, and tailored platform to assist in organizing these communications and automating certain game-to-game processes could easily save hundreds of hours a year for an internal production director.
 
-* Windows or macOS:
-
-   https://nodejs.org/en/
-
-### Installing
-
-1. Clone the repository
-
-   ```
-   git clone https://github.com/dunky11/react-saas-template
-   ```
-2. Install dependencies, this can take a minute
-
-   ```
-   cd react-saas-template
-   npm install
-   ```
-3. Start the local server
-
-   ```
-   npm start
-   ```
-
-Your browser should now open and show the app. Otherwise open http://localhost:3000/ in your browser. Editing files will automatically refresh the page.
-
-### What to do next?
-
-If you are new to React, you should watch a [basic React tutorial](https://www.youtube.com/results?search_query=react+tutorial) first.
-
-If you already know React, then most of the information you need is in the [Material-UI documentation](https://material-ui.com/getting-started/usage/).
-
-You can go into [src/theme.js](/src/theme.js) and change the primary and secondary color codes at the top of the script to the values you like and some magic will happen.
-
-## Deployment
-
-If you are happy with the state of your website you can run:
-
-```
-npm run build 
-```
-
-It will create a folder named build with your compiled project inside. After that copy its content into your webroot and you are ready to go.
-
-## Build With
-
-* [Create-React-App](https://github.com/facebook/create-react-app) - Used to bootstrap the development
-* [Material-UI](https://github.com/mui-org/material-ui) - Material Design components
-* [React-Router](https://github.com/ReactTraining/react-router) - Routing of the app
-* [Pace](https://github.com/HubSpot/pace) - Loading bar at the top
-* [Emoji-Mart](https://github.com/missive/emoji-mart) - Picker for the emojis
-* [React-Dropzone](https://github.com/react-dropzone/react-dropzone) - File drop component for uploads
-* [Recharts](https://github.com/recharts/recharts) - Charting library I used for the statistics
-* [Aos](https://github.com/michalsnik/aos) - Animations based on viewport
-* [React-Cropper](https://github.com/roadmanfong/react-cropper) - Cropper for the image uploads
-* [React-Stripe-js](https://github.com/stripe/react-stripe-js) - Stripes payment elements
-
-## Things im currently working on
-
-- [ ] Improving the encapsulation of components
-- [ ] smoothScrollTop() sometimes stops scrolling top when components with big height are still rendering
-- [ ] When a Dialog is opened there is a margin on the right side of the viewport (could be that this is not fixable without shaking the viewport on dialog open)
-- [ ] shadeColor() throws errors on certain color codes
-- [ ] Adding iDEAL, FBX and PaymentRequestButton to avaible payment methods
-
-## Contribute
-Show your support by ⭐ the project. Pull requests are always welcome.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/dunky11/react-saas-template/blob/master/LICENSE) file for details.
