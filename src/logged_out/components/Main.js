@@ -1,23 +1,23 @@
-import React, { memo, useState, useEffect, useCallback } from "react";
-import PropTypes from "prop-types";
-import AOS from "aos/dist/aos";
-import { withStyles } from "@material-ui/core";
-import NavBar from "./navigation/NavBar";
-import Footer from "./footer/Footer";
-import "aos/dist/aos.css";
-import CookieRulesDialog from "./cookies/CookieRulesDialog";
-import CookieConsent from "./cookies/CookieConsent";
-import dummyBlogPosts from "../dummy_data/blogPosts";
-import DialogSelector from "./register_login/DialogSelector";
-import Routing from "./Routing";
-import smoothScrollTop from "../../shared/functions/smoothScrollTop";
+import React, { memo, useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
+import AOS from 'aos/dist/aos';
+import { withStyles } from '@material-ui/core';
+import NavBar from './navigation/NavBar';
+import Footer from './footer/Footer';
+import 'aos/dist/aos.css';
+import CookieRulesDialog from './cookies/CookieRulesDialog';
+import CookieConsent from './cookies/CookieConsent';
+import dummyBlogPosts from '../dummy_data/blogPosts';
+import DialogSelector from './register_login/DialogSelector';
+import Routing from './Routing';
+import smoothScrollTop from '../../shared/functions/smoothScrollTop';
 
 AOS.init({ once: true });
 
-const styles = (theme) => ({
+const styles = theme => ({
   wrapper: {
     backgroundColor: theme.palette.common.white,
-    overflowX: "hidden",
+    overflowX: 'hidden',
   },
 });
 
@@ -31,19 +31,18 @@ function Main(props) {
 
   const selectHome = useCallback(() => {
     smoothScrollTop();
-    document.title =
-      "WaVer - Free template for building an SaaS or admin application";
-    setSelectedTab("Home");
+    document.title = 'scout. // event management';
+    setSelectedTab('Home');
   }, [setSelectedTab]);
 
   const selectBlog = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Blog";
-    setSelectedTab("Blog");
+    document.title = 'scout. // Blog';
+    setSelectedTab('Blog');
   }, [setSelectedTab]);
 
   const openLoginDialog = useCallback(() => {
-    setDialogOpen("login");
+    setDialogOpen('login');
     setIsMobileDrawerOpen(false);
   }, [setDialogOpen, setIsMobileDrawerOpen]);
 
@@ -52,12 +51,12 @@ function Main(props) {
   }, [setDialogOpen]);
 
   const openRegisterDialog = useCallback(() => {
-    setDialogOpen("register");
+    setDialogOpen('register');
     setIsMobileDrawerOpen(false);
   }, [setDialogOpen, setIsMobileDrawerOpen]);
 
   const openTermsDialog = useCallback(() => {
-    setDialogOpen("termsOfService");
+    setDialogOpen('termsOfService');
   }, [setDialogOpen]);
 
   const handleMobileDrawerOpen = useCallback(() => {
@@ -69,19 +68,19 @@ function Main(props) {
   }, [setIsMobileDrawerOpen]);
 
   const openChangePasswordDialog = useCallback(() => {
-    setDialogOpen("changePassword");
+    setDialogOpen('changePassword');
   }, [setDialogOpen]);
 
   const fetchBlogPosts = useCallback(() => {
-    const blogPosts = dummyBlogPosts.map((blogPost) => {
+    const blogPosts = dummyBlogPosts.map(blogPost => {
       let title = blogPost.title;
       title = title.toLowerCase();
       /* Remove unwanted characters, only accept alphanumeric and space */
-      title = title.replace(/[^A-Za-z0-9 ]/g, "");
+      title = title.replace(/[^A-Za-z0-9 ]/g, '');
       /* Replace multi spaces with a single space */
-      title = title.replace(/\s{2,}/g, " ");
+      title = title.replace(/\s{2,}/g, ' ');
       /* Replace space with a '-' symbol */
-      title = title.replace(/\s/g, "-");
+      title = title.replace(/\s/g, '-');
       blogPost.url = `/blog/post/${title}`;
       blogPost.params = `?id=${blogPost.id}`;
       return blogPost;

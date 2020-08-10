@@ -1,22 +1,22 @@
-import React, { memo, useCallback, useState, useEffect, Fragment } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { withStyles } from "@material-ui/core";
-import Routing from "./Routing";
-import NavBar from "./navigation/NavBar";
-import ConsecutiveSnackbarMessages from "../../shared/components/ConsecutiveSnackbarMessages";
-import smoothScrollTop from "../../shared/functions/smoothScrollTop";
-import persons from "../dummy_data/persons";
-import LazyLoadAddBalanceDialog from "./subscription/LazyLoadAddBalanceDialog";
+import React, { memo, useCallback, useState, useEffect, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core';
+import Routing from './Routing';
+import NavBar from './navigation/NavBar';
+import ConsecutiveSnackbarMessages from '../../shared/components/ConsecutiveSnackbarMessages';
+import smoothScrollTop from '../../shared/functions/smoothScrollTop';
+import persons from '../dummy_data/persons';
+import LazyLoadAddBalanceDialog from './subscription/LazyLoadAddBalanceDialog';
 
-const styles = (theme) => ({
+const styles = theme => ({
   main: {
     marginLeft: theme.spacing(9),
-    transition: theme.transitions.create(["width", "margin"], {
+    transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('xs')]: {
       marginLeft: 0,
     },
   },
@@ -82,7 +82,7 @@ function Main(props) {
 
   const onPaymentSuccess = useCallback(() => {
     pushMessageToSnackbar({
-      text: "Your balance has been updated.",
+      text: 'Your balance has been updated.',
     });
     setIsAddBalanceDialogOpen(false);
   }, [pushMessageToSnackbar, setIsAddBalanceDialogOpen]);
@@ -116,32 +116,32 @@ function Main(props) {
     const oneMonthSeconds = Math.round(60 * 60 * 24 * 30.5);
     const transactionTemplates = [
       {
-        description: "Starter subscription",
+        description: 'Starter subscription',
         isSubscription: true,
         balanceChange: -1499,
       },
       {
-        description: "Premium subscription",
+        description: 'Premium subscription',
         isSubscription: true,
         balanceChange: -2999,
       },
       {
-        description: "Business subscription",
+        description: 'Business subscription',
         isSubscription: true,
         balanceChange: -4999,
       },
       {
-        description: "Tycoon subscription",
+        description: 'Tycoon subscription',
         isSubscription: true,
         balanceChange: -9999,
       },
       {
-        description: "Added funds",
+        description: 'Added funds',
         isSubscription: false,
         balanceChange: 2000,
       },
       {
-        description: "Added funds",
+        description: 'Added funds',
         isSubscription: false,
         balanceChange: 5000,
       },
@@ -182,7 +182,7 @@ function Main(props) {
         id: i,
         profilePicUrl: person.profilePicUrl,
         date: curUnix,
-        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed.",
+        text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed.',
       };
       curUnix += oneDaySeconds;
       messages.push(message);
@@ -218,11 +218,11 @@ function Main(props) {
     if (pushMessageToSnackbar) {
       if (isAccountActivated) {
         pushMessageToSnackbar({
-          text: "Your account is now deactivated.",
+          text: 'Your account is now deactivated.',
         });
       } else {
         pushMessageToSnackbar({
-          text: "Your account is now activated.",
+          text: 'Your account is now activated.',
         });
       }
     }
@@ -231,11 +231,11 @@ function Main(props) {
 
   const selectDashboard = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Dashboard";
-    setSelectedTab("Dashboard");
+    document.title = 'scout.. // Dashboard';
+    setSelectedTab('Dashboard');
     if (!hasFetchedCardChart) {
       setHasFetchedCardChart(true);
-      import("../../shared/components/CardChart").then((Component) => {
+      import('../../shared/components/CardChart').then(Component => {
         setCardChart(Component.default);
       });
     }
@@ -248,29 +248,29 @@ function Main(props) {
 
   const selectPosts = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Posts";
-    setSelectedTab("Posts");
+    document.title = 'scout. // Posts';
+    setSelectedTab('Posts');
     if (!hasFetchedEmojiTextArea) {
       setHasFetchedEmojiTextArea(true);
-      import("../../shared/components/EmojiTextArea").then((Component) => {
+      import('../../shared/components/EmojiTextArea').then(Component => {
         setEmojiTextArea(Component.default);
       });
     }
     if (!hasFetchedImageCropper) {
       setHasFetchedImageCropper(true);
-      import("../../shared/components/ImageCropper").then((Component) => {
+      import('../../shared/components/ImageCropper').then(Component => {
         setImageCropper(Component.default);
       });
     }
     if (!hasFetchedDropzone) {
       setHasFetchedDropzone(true);
-      import("../../shared/components/Dropzone").then((Component) => {
+      import('../../shared/components/Dropzone').then(Component => {
         setDropzone(Component.default);
       });
     }
     if (!hasFetchedDateTimePicker) {
       setHasFetchedDateTimePicker(true);
-      import("../../shared/components/DateTimePicker").then((Component) => {
+      import('../../shared/components/DateTimePicker').then(Component => {
         setDateTimePicker(Component.default);
       });
     }
@@ -292,12 +292,12 @@ function Main(props) {
 
   const selectSubscription = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Subscription";
-    setSelectedTab("Subscription");
+    document.title = 'scout. // Subscription';
+    setSelectedTab('Subscription');
   }, [setSelectedTab]);
 
   const getPushMessageFromChild = useCallback(
-    (pushMessage) => {
+    pushMessage => {
       setPushMessageToSnackbar(() => pushMessage);
     },
     [setPushMessageToSnackbar]
